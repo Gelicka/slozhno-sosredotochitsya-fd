@@ -1,1 +1,1 @@
-https://github.com/Gelicka/slozhno-sosredotochitsya-fd#
+https://github.com/Gelicka/slozhno-sosredotochitsya-fd
