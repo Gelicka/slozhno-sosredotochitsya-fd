@@ -9,4 +9,85 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --backround-img: url(../images/cover-image-light.png);
+  --backround-color: #FFF1F7;
+  --backround-title-color: #FF8DCB;
+  --color-shadow: #FFC2E6;
+  --color-title: #353430;
+  --color-glowing: #353430;
+  --color-text: #353430;
+
+  .header__decoration {
+    display: none;
+  }
+
+  .header__theme-menu-button_type_light::after {
+  content: "";
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 13px;
+  position: absolute;
+  left: 295px;
+  top: 74px;
+  width: 70px;
+  height: 26px;
+  border: 1px solid var(--color-glowing);
+}
+
+.header__menu-button-border::after {
+  display: none;
+}
+
+/* Ul Kit light */
+.header__theme-menu-button_type_light:hover {
+  border: 0px solid rgb(255, 255, 255);
+}
+
+.header__theme-menu-button_type_light:focus {
+  text-decoration: underline;
+  border: 0px;
+  padding: 0px;
+}
+
+.header__theme-menu-button_type_dark:hover {
+  outline: 1px solid #32312D66;
+}
+
+.header__theme-menu-button_type_dark:focus {
+  text-decoration: underline;
+  outline: 0px;
+  text-decoration-color: #32312D66;
+}
+
+.link_shado:hover {
+  text-decoration: underline;
+}
+
+.link_shado:focus {
+box-sizing: border-box;
+width: 97px;
+height: 33px;
+border: 1px solid #F1B2CE;
+text-decoration: none;
+}
+
+@media (width>=768px) {
+    .header__theme-menu-button_type_light::after {
+  content: "";
+  left: 678px;
+  top: 192px;
+}
+}
+
+@media (width>=1024px) {
+    .header__theme-menu-button_type_light::after {
+  content: "";
+  left: 396px;
+  top: 20px;
+}
+}
+
 }
