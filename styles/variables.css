@@ -10,5 +10,8 @@
   --color-shadow: #DB00FF;
   --color-title: #000028;
   --color-glowing: #FF0070;
-    --color-text: #F1B2CE;
+  --color-text: #F1B2CE;
+  --display: block;
+  --display-versa: none;
+  --menu-padding: 30px;
 }

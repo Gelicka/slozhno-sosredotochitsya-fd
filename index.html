@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сложно сосредоточиться</title>
     <!-- Файлы стилей -->
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
-    <link rel="stylesheet" href="./fonts/fonts.css" />
-    <link rel="stylesheet" href="./styles/globals.css" />
     <!-- Файл скрипта -->
     <script src="./scripts/script.js"></script>
     <!-- Подключение темы по умолчанию -->
@@ -25,13 +25,12 @@
     <header class="header decorated-zone">
       <div class="header__decoration">
         <p class="header__decoration-text">Rec</p>
-        <div class="header__decoration-lap"></div>
       </div>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
             <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
+              class="header__theme-menu-button header__theme-menu-button_type_light header__menu-button-border-light"
             >
               день
             </button>
@@ -53,9 +52,9 @@
           </li>
         </ul>
       </nav>
-      <section class="header__section indent">
+      <div class="header__section indent">
         <div>
-          <h1 class="header__section-h1">no focus</h1>
+          <h1 class="header__title">no focus</h1>
         </div>
         <div class="header__section-block">
           <p class="header__section-text">
@@ -63,7 +62,7 @@
             сложно сконцентрироваться, особенно когда очень надо
           </p>
         </div>
-      </section>
+      </div>
     </header>
 
     <main class="main">
@@ -72,12 +71,12 @@
           <h2 class="text_color-pink">Почему сосредоточиться так сложно</h2>
         </div>
         <div class="concentration__explanation-multitasking">
-          <h3 class="title-decor mrg-down text_color-black">Многозадачность</h3>
+          <h3 class="title-decor mrg-down title-decor__accent">Многозадачность</h3>
           <p class="paragraph">
             Особенно сложно сосредоточиться, когда задач много и все они —
             важные. Где же легендарная многозадачность, когда она так нужна вам
             (и всем нанимающим менеджерам этого мира)? А дело в том, что её
-            просто не существует. Исследователи <a class="link_shado" href="https://dana.org/news-and-insights/">выяснили</a>, что мозгу тяжело
+            просто не существует. Исследователи <a class="link_shado" target="_blank" href="https://dana.org/news-and-insights/">выяснили</a>, что мозгу тяжело
             концентрироваться даже на двух делах одновременно. А когда в поле
             внимания попадает несколько важных задач, организм паникует и
             выделяет кортизол и адреналин — «гормоны стресса». Из-за этого мы
@@ -85,7 +84,7 @@
           </p>
         </div>
         <div class="concentration__explanation-dopamine">
-          <h3 class="title-decor mrg-down text_color-black">Дофамин</h3>
+          <h3 class="title-decor mrg-down title-decor__accent">Дофамин</h3>
           <p class="paragraph">
             С гормонами стресса всё понятно, но дальше — ещё интереснее. В нашей
             невозможности сосредоточиться замешана и полная противоположность
@@ -104,7 +103,7 @@
           <h2 class="text_color-pink">Что снижает концентрацию внимания?</h2>
         </div>
         <div class="concentration__decreased-concentration-multitasking">
-          <h3 class="title-decor mrg-down text_color-black">Многозадачность</h3>
+          <h3 class="title-decor mrg-down title-decor__accent">Многозадачность</h3>
           <p class="paragraph">
             Как концентрация может снижаться из-за… концентрации? Любая
             стрессовая ситуация (и резко меняющийся мир в целом) заставляет наш
@@ -115,7 +114,7 @@
           </p>
         </div>
         <div class="concentration__decreased-concentration-eat">
-          <h3 class="title-decor mrg-down text_color-black">Еда</h3>
+          <h3 class="title-decor mrg-down title-decor__accent">Еда</h3>
           <p class="paragraph">
             «Быстрые углеводы» — сахар, белый хлеб, сладости — молниеносно
             доставляют в мозг энергию и помогают ему лучше работать. Но уходит
@@ -126,7 +125,7 @@
           </p>
         </div>
         <div class="concentration__decreased-concentration-gadgets">
-          <h3 class="title-decor mrg-down text_color-black">Гаджеты</h3>
+          <h3 class="title-decor mrg-down title-decor__accent">Гаджеты</h3>
           <p class="paragraph">
             Да-да, это та самая ситуация, когда на экране ноутбука — код, в
             наушниках — подкаст, а на компьютере фоном — ещё и видео с забавными
@@ -148,14 +147,14 @@
         </div>
         <div class="vnutrennii-div">
         <div class="concentrate__better-recommendations">
-          <h4 class="title-decor text_color-black">
+          <h3 class="title-decor title-decor__accent">
             5 простых (на самом деле не очень) советов
-          </h4>
+          </h3>
         </div>
         <div>
-          <h3 class="title-decor text_color-black mrg-down">
+          <h4 class="title-decor title-decor__accent mrg-down paragraph-normal">
             Представьте небо и облака
-          </h3>
+          </h4>
           <p class="paragraph">
             Или листья в ручье. Тут дело в лёгкой медитации, которая помогает
             успокоиться. Ведь часто именно тревожные мысли о сложных задачах как
@@ -168,7 +167,7 @@
           </p>
         </div>
         <div>
-          <h3 class="title-decor text_color-black mrg-down">Включите музыку</h3>
+          <h4 class="title-decor title-decor__accent mrg-down paragraph-normal">Включите музыку</h4>
           <p class="paragraph">
             Но не любую, и не любимую. Любимая может быть связана с сильными
             положительными эмоциями, которые тоже очень сильно отвлекают.
@@ -177,9 +176,9 @@
           </p>
         </div>
         <div>
-          <h3 class="title-decor text_color-black mrg-down">Прогуляйтесь</h3>
+          <h4 class="title-decor title-decor__accent mrg-down paragraph-normal">Прогуляйтесь</h4>
           <p class="paragraph">
-            Или даже пробегитесь. Лучше найти парк или лес: один эксперимент <a class="link_shado" href="https://www.sciencedirect.com/science/article/abs/pii/S0272494415000328">
+            Или даже пробегитесь. Лучше найти парк или лес: один эксперимент <a class="link_shado" target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0272494415000328">
             показал</a>, что созерцание природы повышает концентрацию, в то время
             как после просмотра городских пейзажей она наоборот понижается.
             Можно совместить прогулку с физическими упражнениями или бегом — так
@@ -188,7 +187,7 @@
           </p>
         </div>
         <div>
-          <h3 class="title-decor text_color-black mrg-down">Хорошо ешьте</h3>
+          <h4 class="title-decor title-decor__accent mrg-down paragraph-normal">Хорошо ешьте</h4>
           <p class="paragraph">
             Мы — не ваша бабушка, но это правда важно. Выбирайте продукты,
             которые препятствуют резким скачкам сахара в крови. Например, с
@@ -197,7 +196,7 @@
           </p>
         </div>
         <div>
-          <h3 class="title-decor text_color-black mrg-down">Читайте</h3>
+          <h4 class="title-decor title-decor__accent mrg-down paragraph-normal">Читайте</h4>
           <p class="paragraph">
             Настоящие бумажные книги. Это правда помогает с концентрацией: чтобы
             прочитать пост в соцсети, достаточно нескольких минут или даже
@@ -209,33 +208,33 @@
       </section>
 
       <section class="section__image indent">
-        <h2 class="section__image-text title-decor text_color-black">
+        <h2 class="section__image-text title-decor title-decor__accent">
           А можно в картинках?
         </h2>
         <div class="section__image-block">
           <img
             src="./images/sunset.png"
-            alt=""
+            alt="Рисунок солнечного пейзажа с горами"
             class="section__image-sunset section__image-all"
           />
           <img
             src="./images/ice-cream.png"
-            alt=""
+            alt="Рисунок с мороженым"
             class="section__image-ice-cream section__image-all"
           />
           <img
             src="./images/tape.png"
-            alt=""
+            alt="Рисунок с кассетой"
             class="section__image-tape section__image-all"
           />
           <img
             src="./images/books.png"
-            alt=""
+            alt="Рисунок с книгами"
             class="section__image-books section__image-all"
           />
           <img
             src="./images/street.png"
-            alt=""
+            alt="Рисунок улицы"
             class="section__image-street section__image-all"
           />
         </div>

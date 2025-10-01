@@ -9,16 +9,15 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--backround-color);
-  height: 6770px;
   width: 375px;
 }
+/* углы в шапке и футере */
 
-.decorated-zone::before {
+.decorated-zone::before,
+.footer__decorated-zone::before {
 content:"";
 box-sizing: border-box;
 position: absolute;
-left: 340px;
-top: 10px;
 width: 25.04px;
 height: 25px;
 border-width: 1px 1px 0px 0px;
@@ -26,17 +25,40 @@ border-style: solid;
 border-color: var(--color-glowing);
 }
 
-.decorated-zone::after {
+.decorated-zone::before {
+content:"";
+left: 340px;
+top: 10px;
+}
+
+.footer__decorated-zone::before {
+content:"";
+left: 340px;
+top: 6113px;
+}
+
+.decorated-zone::after,
+.footer__decorated-zone::after {
 content:"";
 box-sizing: border-box;
 position: absolute;
 width: 25.04px;
 height: 25px;
-left: 10px;
-top: 633px;
 border-width: 0px 0px 1px 1px;
 border-style: solid;
 border-color: var(--color-glowing);
+}
+
+.decorated-zone::after {
+content:"";
+left: 10px;
+top: 633px;
+}
+
+.footer__decorated-zone::after {
+content:"";
+left: 10px;
+top: 6735px;
 }
 
 .title-decor {
@@ -47,7 +69,7 @@ border-color: var(--color-glowing);
   color: var(--color-glowing);
 }
 
-.text_color-black {
+.title-decor__accent {
   color: var(--color-title);
 }
 
@@ -56,41 +78,22 @@ border-color: var(--color-glowing);
 }
 
 .link_shado {
-text-shadow: 2px 1px 0 var(--color-glowing);
+text-shadow: 2px 1px 0 var(--backround-title-color);
 text-decoration: none;
 }
 
-/* заголовки */
-h2 {
-  font-family: IBM Plex Mono;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 18px;
-  line-height: 23.4px;
-  letter-spacing: 0%;
-}
-
-h3 {
-  font-family: IBM Plex Mono;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 18px;
-  leading-trim: NONE;
-  line-height: 23.4px;
-  letter-spacing: 0%;
-
-}
-
+h2,
+h3,
 h4 {
-  font-family: IBM Plex Mono;
+  font-family: IBM Plex Mono, sans-serif;
   font-weight: 700;
   font-style: Bold;
   font-size: 18px;
-  leading-trim: NONE;
   line-height: 23.4px;
   letter-spacing: 0%;
 
 }
+
 /* текст */
 .paragraph {
 font-family: IBM Plex Mono;
@@ -103,6 +106,14 @@ letter-spacing: 0%;
   color: var(--color-text)
 }
 
+.paragraph-normal {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+
 /* Расстояние между заголовком и абзацем */
 .mrg-down {
   margin-bottom: 10px;
@@ -111,7 +122,7 @@ letter-spacing: 0%;
 /* а */
 
 .header__theme-menu {
-  padding-top: 76.5px;
+  padding-top: var(--menu-padding);
 }
 
 .header__theme-menu-list {
@@ -133,30 +144,32 @@ letter-spacing: 0%;
 }
 
 .header__decoration {
-  display: inline-flex;
-  position: absolute;
-  right: 19px;
-  top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 27px 10px 0;
 }
 
-.header__decoration-lap {
+.header__decoration-text::after {
+  content: "";
+  display: var(--display);
   width: 9px;
   height: 9px;
-  background: var(--backround-title-color);
-  box-shadow: 0px 0px 4px 2px var(--color-glowing);
-  position: relative;
-  top: 8px;
+  background: #FF0070;
+  box-shadow: 0px 0px 4px 2px #FF0070;
+  position: absolute;
+  top: 18px;
+  left: 347px;
   border-radius: 50%;
 }
 
 .header__section-block {
   width: 355px;
-  height: 117px;
   margin-bottom: 106px;
   background-color: var(--backround-title-color);
 }
 
 .header__decoration-text {
+  display: var(--display);
   text-transform: uppercase;
   font-family: 'IBM Plex Mono';
   font-style: normal;
@@ -174,7 +187,8 @@ letter-spacing: 0%;
 	cursor: pointer;
 }
 
-.header__menu-button-border {
+.header__menu-button-border,
+.header__menu-button-border-light {
 box-sizing: border-box;
 display: flex;
 flex-direction: row;
@@ -185,7 +199,21 @@ align-items: center;
 .header__menu-button-border::after {
   content: "";
   box-sizing: border-box;
-  display: flex;
+  display: var(--display);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 13px;
+  position: absolute;
+  width: 70px;
+  height: 26px;
+  border: 1px solid var(--color-glowing);
+}
+
+.header__menu-button-border-light::after {
+  content: "";
+  box-sizing: border-box;
+  display: var(--display-versa);
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -208,18 +236,16 @@ align-items: center;
   font-size: 18px;
   line-height: 23px;
   color: var(--color-title);
-  margin-bottom: 66px;
 }
 
-.header__section-h1 {
-  /* не совпадает шрифт */
+.header__title {
   font-family: 'IBM Plex mono';
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--color-shadow);
   text-shadow: 4px 4px 0 var(--backround-title-color);
-  margin-top: 65px;
+  margin-top: 70px;
   margin-bottom: 55px;
 }
 
@@ -251,10 +277,6 @@ align-items: center;
     gap: 20px;
   }
 
-/* section__image */
-.section__image {
-  min-height: 1400px;
-}
 
 .section__image-block {
   display: grid;
@@ -269,48 +291,18 @@ align-items: center;
   object-fit: cover;
 }
 
-.main {
-  min-height: 5355px;
-}
-
 /* footer */
 .footer {
-  min-height: 400px;
+  height: 100vh;
+  min-height: 668px;
   font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 700;
   font-size: 116px;
   color: var(--color-shadow);
   text-shadow: 2px 2px 0px var(--backround-title-color);
-  margin-top: 300px;
+  padding-top: 300px;
   margin-left: 13px;
-}
-
-.footer__decorated-zone::before {
-content:"";
-box-sizing: border-box;
-position: absolute;
-left: 340px;
-top: 6113px;
-width: 25.04px;
-height: 25px;
-border-width: 1px 1px 0px 0px;
-border-style: solid;
-border-color: var(--color-glowing);
-
-}
-
-.footer__decorated-zone::after {
-content:"";
-box-sizing: border-box;
-position: absolute;
-width: 25.04px;
-height: 25px;
-left: 10px;
-top: 6735px;
-border-width: 0px 0px 1px 1px;
-border-style: solid;
-border-color: var(--color-glowing);
 }
 
 @media (width >= 768px) {
@@ -321,14 +313,12 @@ border-color: var(--color-glowing);
 /* рамка */
   .decorated-zone::before {
   content:"";
-  position: absolute;
   left: 723px;
   top: 20px;
   }
 
   .decorated-zone::after {
   content:"";
-  position: absolute;
   left: 20px;
   top: 979px;
   }
@@ -339,15 +329,25 @@ border-color: var(--color-glowing);
     margin-right: 10px;
   }
 
+  .header__decoration-text::after {
+  content: "";
+  top: 28px;
+  left: 730px;
+}
+
+.header__title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
+
 /* Шапка */
 
   .header__theme-menu {
-    margin-top: 118px;
+    margin-top: 110px;
     margin-right: 10px;
   }
 
   .header__section {
-    margin-top: 110px;
+    margin-top: 105px;
     margin-left: 0px;
   }
 
@@ -363,7 +363,6 @@ border-color: var(--color-glowing);
 
   .main {
     margin-left: 10px;
-    min-height: 3682px;
   }
 
   /* Почему сосредоточиться так сложно */
@@ -425,7 +424,7 @@ border-color: var(--color-glowing);
   .section__image {
     margin-top: 80px;
     width: 728px;
-    min-height: 823px;
+
   }
 
   .section__image-block {
@@ -482,9 +481,8 @@ border-color: var(--color-glowing);
   }
 
   .footer {
-    min-height: 1024px;
-    padding-top: 200px;
-    padding-left: 193px;
+    padding-top: 495px;
+    padding-left: 195px;
   }
 
   .footer__decorated-zone::before {
@@ -504,7 +502,6 @@ border-color: var(--color-glowing);
 
 @media (width >= 1024px) {
 .page {
-  height: 5008px;
   width: 1024px;
 }
 
@@ -523,10 +520,14 @@ border-color: var(--color-glowing);
   top: 723px;
   }
 
+.header__decoration-text::after {
+  content: "";
+  left: 986px;
+}
+
   /* Шапка */
 .header {
 width: 1024px;
-height: 768px;
 }
 
 .header__section {
@@ -534,7 +535,7 @@ height: 768px;
 }
 
 .header__theme-menu {
-  margin-top: -53px;
+  margin-top: -60px;
   margin-bottom: 275px;
 }
 .header__theme-menu-list {
@@ -544,10 +545,9 @@ height: 768px;
   margin-right: 397px;
 }
 
-.header__section-h1 {
+.header__title {
   margin-top: 0px;
   margin-bottom: 114px;
-  font-size: 157px;
 }
 
 .header__section-block {
@@ -556,6 +556,7 @@ height: 768px;
   height: 71px;
   margin-top: 2px;
   margin-right: 10px;
+  margin-bottom: 80px;
 }
 
 /* main */
@@ -563,7 +564,10 @@ height: 768px;
   margin-top: 112px;
 }
 /* Почему сосредоточиться так сложно */
-
+.concentration__explanation-multitasking,
+.concentration__explanation-dopamine {
+  margin-left: 10px;
+}
   .concentration__explanation {
     display: grid;
     grid-template-columns: 315px 660px;
@@ -632,9 +636,9 @@ height: 768px;
   /* footer */
   .footer {
     margin-top: 0px;
-    padding-top: 15px;
+    padding-top: 340px;
     padding-left: 265px;
-    font-size: 157px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
     .footer__decorated-zone::before {
@@ -665,6 +669,6 @@ height: 768px;
 }
 
 .link_shado:focus {
-outline: 1px solid #F1B2CE;
+outline: 1px solid var(--color-text);
 text-decoration: none;
 }
