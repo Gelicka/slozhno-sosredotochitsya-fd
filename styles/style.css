@@ -1,4 +1,5 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--backround-img);
@@ -7,7 +8,10 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--backround-color);
-  width: 375px;
+  /* width: 100%; */
+  min-width: 375px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .decorated-zone::before {
@@ -31,29 +35,31 @@
 }
 .header {
   position: relative;
+  width: 100%;
 }
 
 .header .decorated-zone::before {
   content: "";
   top: 10px;
-  left: 339px;
+  right: 10px;
 }
 
 .header .decorated-zone::after {
   content: "";
-  top: 633px;
+  top: 635px;
   left: 10px;
 }
 
 .footer .decorated-zone::before {
   content: "";
   top: 52px;
-  left: 327px;
+  right: 10px;
 }
 
 .footer .decorated-zone::after {
   content: "";
-  top: 672px;
+  top: 670px;
+  left: 10px;
 }
 
 .title-decor {
@@ -69,7 +75,7 @@
 }
 
 .indent {
-  margin: 0px 10px;
+  padding: 0px 10px;
 }
 
 .link_shadow {
@@ -108,7 +114,7 @@ h4 {
 
 .header__theme-menu {
   padding-top: var(--menu-padding);
-  padding-top: 75px;
+  padding-top: 20vw;
 }
 
 .header__theme-menu-list {
@@ -132,7 +138,7 @@ h4 {
 .header__decoration {
   position: absolute;
   top: 10px;
-  left: 305px;
+  right: 27px;
 }
 
 .header__decoration-text::after {
@@ -149,8 +155,7 @@ h4 {
 }
 
 .header__section-block {
-  width: 355px;
-  margin-bottom: 106px;
+  margin-bottom: 28.2667vw;
   background-color: var(--backround-title-color);
 }
 
@@ -195,6 +200,28 @@ h4 {
 .theme-dark .header__theme-menu-button[data-theme="dark"]::after {
   content: "";
   opacity: 1;
+}
+
+.theme-dark .header__theme-menu-button_type_light:hover::after {
+  opacity: 1;
+  border-color: var(--color-glowing);
+}
+
+.theme-light .header__theme-menu-button_type_dark:hover::after {
+  opacity: 1;
+  border-color: var(--color-glowing);
+}
+
+.theme-dark .header__theme-menu-button_type_light:focus::after {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.theme-light .header__theme-menu-button_type_dark:focus::after {
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .header__section {
@@ -247,6 +274,9 @@ h4 {
   display: grid;
   gap: 20px;
 }
+/* .section__image {
+  max-width: 768px;
+} */
 
 .section__image-block {
   display: grid;
@@ -256,23 +286,28 @@ h4 {
 }
 
 .section__image-all {
-  width: 355px;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   background-position: center;
   object-fit: cover;
 }
 
 .footer {
-  height: 100vh;
+  height: 100vw;
   min-height: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   font-family: IBM Plex Mono, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--color-shadow);
   text-shadow: 2px 2px 0px var(--backround-title-color);
-  padding-top: 300px;
-  margin-left: 13px;
+  padding-top: 80px;
   position: relative;
+  width: 100%;
 }
 
 .link_shadow:hover {
@@ -286,12 +321,12 @@ h4 {
 
 @media (width >= 768px) {
   .page {
-    width: 768px;
+    min-width: 768px;
   }
 
   .header .decorated-zone::before {
     content: "";
-    left: 723px;
+    right: 20px;
     top: 10px;
   }
 
@@ -304,13 +339,13 @@ h4 {
   .footer .decorated-zone::before {
     content: "";
     top: 80px;
-    left: 710px;
+    right: 20px;
   }
 
   .footer .decorated-zone::after {
     content: "";
-    top: 1040px;
-    left: 9px;
+    top: 1040px; 
+    left: 20px;
   }
 
   .header__title {
@@ -319,34 +354,36 @@ h4 {
 
   .header__decoration {
     position: absolute;
-    left: 690px;
+    right: 40px;
   }
 
   .header__theme-menu {
     padding-top: 180px;
-    margin-right: 10px;
+    padding-right: 10px;
     margin-top: 10px;
   }
 
   .header__section {
-    margin-top: 110px;
-    margin-left: 0px;
+    padding-top: 110px;
   }
 
   .header__section-block {
-    margin-left: 385px;
+    margin-left: 376px;
     margin-top: 106px;
     margin-bottom: 243px;
-    width: 364px;
+    min-width: 364px;
+    margin-right: 10px;
   }
 
   .main {
-    margin-left: 10px;
+    padding-left: 10px;
   }
 
   .concentration__explanation {
     display: grid;
-    grid-template-columns: 230px 487px;
+    /* grid-template-columns: 230px 487px; */
+    grid-template-columns: minmax(230px, 1fr) 2fr;
+    padding-right: 19px;
     gap: 20px 10px;
   }
 
@@ -355,15 +392,17 @@ h4 {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
+    margin-right: 10px;
   }
 
   .concentration__explanation-card {
-    margin-left: 15px;
+    margin-left: 5px;
   }
 
   .concentration__decreased-concentration {
     margin-top: 80px;
-    width: 729px;
+    min-width: 729px;
+    padding-right: 19px;
   }
 
   .media-query-spacing {
@@ -372,8 +411,10 @@ h4 {
 
   .concentrate__better {
     display: grid;
-    grid-template-columns: 236px 472px;
+    /* grid-template-columns: 236px 472px; */
+    grid-template-columns: minmax(236px, 1fr) 2fr;
     margin-top: 80px;
+    padding-right: 18px;
   }
 
   .content-wrapper {
@@ -383,14 +424,17 @@ h4 {
 
   .section__image {
     margin-top: 80px;
-    width: 728px;
+    min-width: 728px;
+    padding-right: 18px;
   }
 
   .section__image-block {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 229px 230px 229px;
-    grid-template-rows: 192px 230px 318px;
+    /* grid-template-columns: 229px 230px 229px;
+    grid-template-rows: 192px 230px 318px; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
     gap: 20px;
   }
 
@@ -399,7 +443,7 @@ h4 {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    width: 479px;
+    min-width: 479px;
     height: 192px;
   }
 
@@ -408,7 +452,7 @@ h4 {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
-    width: 229px;
+    min-width: 229px;
     height: 442px;
   }
 
@@ -417,7 +461,7 @@ h4 {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 4;
-    width: 229px;
+    min-width: 229px;
     height: 568px;
   }
 
@@ -426,7 +470,7 @@ h4 {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-    width: 230px;
+    min-width: 230px;
     height: 230px;
   }
 
@@ -435,67 +479,56 @@ h4 {
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 479px;
+    min-width: 479px;
     height: 318px;
   }
 
   .footer {
     min-height: 1024px;
-    height: 100vh;
+    margin-left: 0vw;
+    padding-top: 120px;
   }
 
-  .footer-text {
-    padding-top: 196px;
-    padding-left: 190px;
-  }
 }
 
 @media (width >= 1024px) {
   .page {
-    width: 1024px;
+    max-width: 1024px;
   }
 
   .header .decorated-zone::before {
-    content: "";
-    left: 979px;
     top: 10px;
   }
 
   .header .decorated-zone::after {
-    content: "";
     left: 20px;
     top: 715px;
   }
 
   .footer .decorated-zone::before {
     content: "";
-    left: 969px;
     top: 80px;
+    right: 19px;
   }
 
   .footer .decorated-zone::after {
-    content: "";
-    left: 8px;
-    top: 783px;
-  }
-
-  .header__decoration {
-    content: "";
-    left: 942px;
+    top: 785px;
+    bottom: 10px;
   }
 
   .header {
-    width: 1024px;
+    width: 100%;
   }
 
   .header__section {
     margin-left: 0px;
+    padding-top: 0px;
   }
 
   .header__theme-menu {
     padding-top: 10px;
     padding-bottom: 275px;
-    padding-right: 385px;
+    padding-right: 380px;
   }
   .header__theme-menu-list {
     display: grid;
@@ -517,17 +550,21 @@ h4 {
   }
 
   .main {
-    margin-top: 112px;
+  padding-top: 112px;
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 10px;
   }
 
   .concentration__explanation {
     display: grid;
-    grid-template-columns: 315px 660px;
+    /* grid-template-columns: 315px 660px; */
+    grid-template-columns: minmax(315px, 1fr) 2fr;
     gap: 20px 10px;
   }
 
   .concentration__explanation-card {
-    margin-left: 10px;
+    margin-left: 0px;
   }
 
   .concentration__decreased-concentration {
@@ -548,6 +585,7 @@ h4 {
 
   .concentrate__better {
     grid-template-columns: 315px 649px;
+    
   }
 
   .section__image-text {
@@ -587,13 +625,13 @@ h4 {
   }
 
   .footer {
-    margin-top: 0px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    width: 100%;
+    height: 768px;
     min-height: 768px;
-  }
-
-  .footer-text {
-    padding-top: 42px;
-    padding-left: 264px;
+    max-height: 768px;
+    padding-bottom: 250px;
+    max-inline-size: 1024px;
+    padding-top: 375px;
   }
 }
