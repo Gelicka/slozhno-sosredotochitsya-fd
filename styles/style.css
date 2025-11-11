@@ -8,10 +8,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--backround-color);
-  /* width: 100%; */
   min-width: 375px;
-  margin: 0 auto;
-  overflow-x: hidden;
 }
 
 .decorated-zone::before {
@@ -36,6 +33,8 @@
 .header {
   position: relative;
   width: 100%;
+  height: 100vh;
+  min-height: 668px;
 }
 
 .header .decorated-zone::before {
